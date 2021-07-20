@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+<form method="post" novalidate>
+  {% csrf_token %}
+  <div class="modal-header">
+    <button type="button" class="close" >
+    </button>
+    <h4 class="modal-title">Create a new board</h4>
+  </div>
+  <div class="modal-body">
+    {% include 'includes/form.html' %}
+  </div>
+  <div class="modal-footer">
+    <a type="button" href="{% url 'boards:home' %}" class="btn btn-default" >Close</a>
+    <button type="submit" class="btn btn-primary">Create board</button>
+  </div>
+</form>
+
+{% endblock %}
